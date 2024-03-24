@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Service</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body id="body">
+    <!-- Sidebar -->
+    <div class="sidebar px-2" id="sidebar" style="width: 140px">
+      <div
+        class="d-flex justify-content-center align-items-center mb-3 py-2"
+        id="menu-top"
+      >
+        <div class="logo d-none rounded" id="logo">
+          <img src="./icons/logo.svg" alt="logo" class="w-100" />
+        </div>
+        <div id="menu" class="p-2">
+          <i class="fa-solid fa-bars fa-2xl" style="color: #ffffff"></i>
+        </div>
+      </div>
+
+      <!-- Menu -->
+      <ul class="menu text-center list-unstyled">
+        <li class="menu-item mb-2">
+          <a href="dashboard.html" class="text-decoration-none d-block">
+            <img src="./icons/business-report.png" alt="" class="mb-1" />
+            <span class="menu-title d-block m-0">Dashboard</span>
+          </a>
+        </li>
+        <li class="menu-item mb-2">
+          <a href="bloglist.html" class="text-decoration-none d-block">
+            <img src="./icons/blog.png" alt="" class="mb-1" />
+            <span class="menu-title d-block m-0">Blog</span>
+          </a>
+        </li>
+        <li class="menu-item mb-2">
+          <a href="memberlist.html" class="text-decoration-none d-block">
+            <img src="./icons/team.png" alt="" class="mb-1" />
+            <span class="menu-title d-block m-0">Team</span>
+          </a>
+        </li>
+        <li class="menu-item mb-2">
+          <a href="categorylist.html" class="text-decoration-none d-block">
+            <img src="./icons/blogging.png" alt="" class="mb-1" />
+            <span class="menu-title d-block m-0">Category</span>
+          </a>
+        </li>
+        <li class="menu-item mb-2">
+          <a href="designationlist.html" class="text-decoration-none d-block">
+            <img src="./icons/designation.png" alt="" class="mb-1" />
+            <span class="menu-title d-block m-0">Designation</span>
+          </a>
+        </li>
+        <li class="menu-item mb-2 active-page">
+          <a href="servicelist.html" class="text-decoration-none d-block">
+            <img src="./icons/services.png" alt="" class="mb-1" />
+            <span class="menu-title d-block m-0">Service</span>
+          </a>
+        </li>
+        <li class="menu-item mb-2">
+          <a href="portfoliolist.html" class="text-decoration-none d-block">
+            <img src="./icons/portfolio.png" alt="" class="mb-1" />
+            <span class="menu-title d-block m-0">Portfolio</span>
+          </a>
+        </li>
+        <li class="menu-item mb-2">
+          <a href="testimoniallist.html" class="text-decoration-none d-block">
+            <img src="./icons/testimonials.png" alt="" class="mb-1" />
+            <span class="menu-title d-block m-0">Testimonial</span>
+          </a>
+        </li>
+        <li class="menu-item mb-2">
+          <a href="counterlist.html" class="text-decoration-none d-block">
+            <img src="./icons/counter.png" alt="" class="mb-1" />
+            <span class="menu-title d-block m-0">Milestone</span>
+          </a>
+        </li>
+        <li class="menu-item mb-2">
+          <a href="banner.html" class="text-decoration-none d-block">
+            <img src="./icons/banner.png" alt="" class="mb-1" />
+            <span class="menu-title d-block m-0">Banner</span>
+          </a>
+        </li>
+        <li class="menu-item mb-2">
+          <a href="userlist.html" class="text-decoration-none d-block">
+            <img src="./icons/profile.png" alt="" class="mb-1" />
+            <span class="menu-title d-block m-0">User</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <main id="main" style="margin-left: 150px">
+      <!-- Body Top -->
+      <div class="top p-2 mb-4">
+        <div class="d-flex justify-content-end gap-2">
+          <div class="user position-relative">
+            <img src="./icons/user.png" alt="" class="usericon" />
+            <ul class="list-unstyled user-dropdown">
+              <li class="drop-item py-1">
+                <a href="profile.html" class="text-decoration-none text-black"
+                  >Profile</a
+                >
+              </li>
+              <li
+                class="drop-item py-1 text-black"
+                data-bs-toggle="modal"
+                data-bs-target="#logoutmodal"
+              >
+                Logout
+              </li>
+            </ul>
+          </div>
+          <img src="./icons/half-moon.png" id="theme" alt="" />
+        </div>
+      </div>
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb-area mb-3">
+        <div class="container">
+          <nav
+            aria-label="breadcrumb"
+            class="p-2 bg-white breadcrumb-main rounded"
+          >
+            <ol class="breadcrumb m-0">
+              <li class="breadcrumb-item">
+                <a href="dashboard.html">Dashboard</a>
+              </li>
+              <li class="breadcrumb-item" aria-current="page">
+                <a href="servicelist.html">Service</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Add Service
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Service Add Form -->
+      <div class="service-container py-3">
+        <div class="container">
+          <div class="row mb-3 justify-content-center">
+            <div class="col-lg-7">
+              <div class="add-form bg-white p-4 rounded">
+                <h2 class="mb-5 section-title border-bottom pb-1">
+                  Add a Service
+                </h2>
+                <form method="post">
+                  <div class="mb-3">
+                    <label for="title" class="fs-5 mb-2">Title</label>
+                    <input type="text" id="title" class="w-100" required />
+                  </div>
+                  <div class="mb-3">
+                    <label for="title" class="fs-5 mb-2">Slug</label>
+                    <input
+                      type="text"
+                      name="slug"
+                      id="title"
+                      class="w-100"
+                      required
+                    />
+                  </div>
+
+                  <div class="mb-5">
+                    <label for="description" class="fs-5 mb-2"
+                      >Description</label
+                    ><br />
+                    <textarea
+                      id="description"
+                      name="description"
+                      class="w-100"
+                      rows="5"
+                    ></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="blogimg" class="fs-5 mb-2"
+                      >Upload Service image</label
+                    ><br />
+                    <input
+                      type="file"
+                      name="blogimg"
+                      id="blogimg"
+                      class="w-100"
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <div class="d-flex align-items-center flex-wrap">
+                      <div class="me-5">
+                        <label for="price" class="fs-5 mb-2"
+                          >Select a Price (Rs.)</label
+                        ><br />
+                        <select name="price" id="price" class="py-2 pe-5">
+                          <option value="Marketing">500</option>
+                          <option value="Creative">1000</option>
+                          <option value="Socialmedia">2000</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-5">
+                    <div class="d-flex align-items-center flex-wrap">
+                      <div class="me-5">
+                        <label for="time" class="fs-5 mb-2"
+                          >Select a Time Duration (min.)</label
+                        ><br />
+                        <select name="time" id="time" class="py-2 pe-5">
+                          <option value="Marketing">60</option>
+                          <option value="Creative">120</option>
+                          <option value="Socialmedia">180</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button class="btn btn-primary mb-1">Add Service</button>
+                  <button
+                    class="btn btn-danger mb-1"
+                    type="reset"
+                    onclick="reset_content()"
+                  >
+                    Reset Content
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--Logout Modal -->
+    <div
+      class="modal fade"
+      id="logoutmodal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Are you sure you want to log out?
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-footer border-0">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              No
+            </button>
+            <button type="button" class="btn btn-primary">
+              <a
+                href="https://binaryshastra.com"
+                class="text-white text-decoration-none"
+                >Yes</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

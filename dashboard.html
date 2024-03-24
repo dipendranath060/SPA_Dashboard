@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body id="body">
+    <!-- Sidebar -->
+    <div class="sidebar px-2" id="sidebar" style="width: 140px">
+      <div
+        class="d-flex justify-content-center mb-3 py-2 align-items-center"
+        id="menu-top"
+      >
+        <div class="logo d-none rounded" id="logo">
+          <img src="./icons/logo.svg" alt="logo" class="w-100" />
+        </div>
+        <div id="menu" class="p-2">
+          <i class="fa-solid fa-bars fa-2xl" style="color: #ffffff"></i>
+        </div>
+      </div>
+
+      <!-- Menu -->
+      <ul class="menu text-center list-unstyled">
+        <li class="menu-item mb-2 active-page">
+          <a href="#" class="text-decoration-none d-block">
+            <img src="./icons/business-report.png" alt="" class="mb-1" />
+            <span class="menu-title d-block m-0">Dashboard</span>
+          </a>
+        </li>
+
+        <li class="menu-item mb-2">
+          <a href="portfoliolist.html" class="text-decoration-none d-block">
+            <img src="./icons/portfolio.png" alt="" class="mb-1" />
+            <span class="menu-title d-block m-0">Price</span>
+          </a>
+        </li>
+
+        <li class="menu-item mb-2">
+          <a href="servicelist.html" class="text-decoration-none d-block">
+            <img src="./icons/services.png" alt="" class="mb-1" />
+            <span class="menu-title d-block m-0">Service</span>
+          </a>
+        </li>
+
+        <li class="menu-item mb-2">
+          <a href="designationlist.html" class="text-decoration-none d-block">
+            <img src="./icons/designation.png" alt="" class="mb-1" />
+            <span class="menu-title d-block m-0">Package</span>
+          </a>
+        </li>
+
+        <li class="menu-item mb-2">
+          <a href="memberlist.html" class="text-decoration-none d-block">
+            <img src="./icons/team.png" alt="" class="mb-1" />
+            <span class="menu-title d-block m-0">Team</span>
+          </a>
+        </li>
+
+        <li class="menu-item mb-2">
+          <a href="bloglist.html" class="text-decoration-none d-block">
+            <img src="./icons/blog.png" alt="" class="mb-1" />
+            <span class="menu-title d-block m-0">Blog</span>
+          </a>
+        </li>
+
+        <li class="menu-item mb-2">
+          <a href="testimoniallist.html" class="text-decoration-none d-block">
+            <img src="./icons/testimonials.png" alt="" class="mb-1" />
+            <span class="menu-title d-block m-0">Testimonial</span>
+          </a>
+        </li>
+        <li class="menu-item mb-2">
+          <a href="counterlist.html" class="text-decoration-none d-block">
+            <img src="./icons/counter.png" alt="" class="mb-1" />
+            <span class="menu-title d-block m-0">Milestone</span>
+          </a>
+        </li>
+        <li class="menu-item mb-2">
+          <a href="banner.html" class="text-decoration-none d-block">
+            <img src="./icons/banner.png" alt="" class="mb-1" />
+            <span class="menu-title d-block m-0">Banner</span>
+          </a>
+        </li>
+        <li class="menu-item mb-2">
+          <a href="userlist.html" class="text-decoration-none d-block">
+            <img src="./icons/profile.png" alt="" class="mb-1" />
+            <span class="menu-title d-block m-0">User</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- Main body -->
+    <main id="main" style="margin-left: 150px">
+      <!-- Body Top -->
+      <div class="top p-2 mb-4">
+        <div class="d-flex justify-content-end gap-2">
+          <div class="user position-relative">
+            <img src="./icons/user.png" alt="" class="usericon" />
+            <ul class="list-unstyled user-dropdown">
+              <li class="drop-item py-1">
+                <a href="profile.html" class="text-decoration-none text-black"
+                  >Profile</a
+                >
+              </li>
+              <li
+                class="drop-item py-1 text-black"
+                data-bs-toggle="modal"
+                data-bs-target="#logoutmodal"
+              >
+                Logout
+              </li>
+            </ul>
+          </div>
+          <img src="./icons/half-moon.png" id="theme" alt="" />
+        </div>
+      </div>
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb-area mb-3">
+        <div class="container">
+          <nav
+            aria-label="breadcrumb"
+            class="bg-white p-2 breadcrumb-main rounded"
+          >
+            <ol class="breadcrumb m-0">
+              <li class="breadcrumb-item active" aria-current="page">
+                Dashboard
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+
+      <section class="dashboard-details mb-3">
+        <div class="container">
+          <h3 class="mb-4" id="user">Welcome User</h3>
+          <div class="row">
+            <!-- Weather -->
+            <div class="col-lg-8 mb-3">
+              <div class="weather">
+                <div id="weather-data" class="text-end">
+                  <div id="weather-details">
+                    <p class="mb-0 fs-2 fw-lighter">
+                      <span id="time" class="fs-2 fw-semibold me-2"></span> |
+                      <span id="temp" class="fs-2 fw-semibold ms-2"></span>
+                      <img
+                        src=""
+                        alt="Loading"
+                        id="weatherimg"
+                        height="60"
+                        width="60"
+                      />
+                    </p>
+                    <p
+                      id="weather-description"
+                      class="text-capitalize mb-1"
+                    ></p>
+                    <p id="weather-location" class="fs-5 fw-medium"></p>
+                    <p id="weather-error"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Counts -->
+            <div class="col-lg-4 mb-3">
+              <div class="blog-details">
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="num box py-3 px-2">
+                      <div class="position-relative z-2">
+                        <p class="text-white mb-1">Total Number Of Blogs</p>
+                        <span class="text-white">15</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="cmt box py-3 px-2">
+                      <div class="position-relative z-2">
+                        <p class="text-white mb-1">Number Of Comment</p>
+                        <span class="text-white">5000</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="des box py-3 px-2">
+                      <div class="position-relative z-2">
+                        <p class="text-white mb-1">Number Of Designations</p>
+                        <span class="text-white">150</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="proj box py-3 px-2">
+                      <div class="position-relative z-2">
+                        <p class="text-white mb-1">Number Of Projects</p>
+                        <span class="text-white">25</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="main-body mb-4">
+        <div class="container">
+          <div class="row">
+            <!-- Recent activities -->
+            <div class="col-lg-4 mb-3">
+              <div class="recent recent-act bg-white recent mb-5">
+                <h4 class="border-bottom p-2 subtitle fs-6">
+                  Recent Activities
+                </h4>
+              </div>
+              <div class="banner-edit">
+                <div class="add-form bg-white p-4 rounded">
+                  <h2 class="mb-3 section-title border-bottom fs-5 pb-2">
+                    Recently Used Banner
+                  </h2>
+                  <img src="./icons/home-1.jpg" class="w-100" alt="" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Blog table -->
+            <div class="col-lg-8">
+              <div class="recent pb-4 bg-white subtitle">
+                <h4 class="p-3 mb-0">Blogs</h4>
+                <div class="px-3 overflow-auto">
+                  <table class="w-100 text-center bg-white" id="table-list">
+                    <tr class="border-top border-bottom">
+                      <th class="py-3 px-1">S.N</th>
+                      <th class="py-3 px-1">Title</th>
+                      <th class="py-3 px-1">Body</th>
+                      <th class="py-3 px-1">Description</th>
+                      <th class="py-3 px-1">Date</th>
+                      <th class="py-3 px-1">Action</th>
+                    </tr>
+                    <tr>
+                      <td class="py-3 px-1">1</td>
+                      <td class="py-3 px-1">Lorem, ipsum dolor.</td>
+                      <td class="py-3 px-1">Lorem, ipsum dolor.</td>
+                      <td class="py-3 px-1">Lorem, ipsum dolor.</td>
+                      <td class="py-3 px-1">01/02/2023</td>
+                      <td class="py-3 px-1">
+                        <button type="button" class="btn btn-success mb-1">
+                          Edit
+                        </button>
+                        <button type="button" class="btn btn-danger mb-1">
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-3 px-1">2</td>
+                      <td class="py-3 px-1">Lorem, ipsum dolor.</td>
+                      <td class="py-3 px-1">Lorem, ipsum dolor.</td>
+                      <td class="py-3 px-1">Lorem, ipsum dolor.</td>
+                      <td class="py-3 px-1">01/02/2023</td>
+                      <td class="py-3 px-1">
+                        <button type="button" class="btn btn-success mb-1">
+                          Edit
+                        </button>
+                        <button type="button" class="btn btn-danger mb-1">
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-3 px-1">3</td>
+                      <td class="py-3 px-1">Lorem, ipsum dolor.</td>
+                      <td class="py-3 px-1">Lorem, ipsum dolor.</td>
+                      <td class="py-3 px-1">Lorem, ipsum dolor.</td>
+                      <td class="py-3 px-1">01/02/2023</td>
+                      <td class="py-3 px-1">
+                        <button type="button" class="btn btn-success mb-1">
+                          Edit
+                        </button>
+                        <button type="button" class="btn btn-danger mb-1">
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-3 px-1">4</td>
+                      <td class="py-3 px-1">Lorem, ipsum dolor.</td>
+                      <td class="py-3 px-1">Lorem, ipsum dolor.</td>
+                      <td class="py-3 px-1">Lorem, ipsum dolor.</td>
+                      <td class="py-3 px-1">01/02/2023</td>
+                      <td class="py-3 px-1">
+                        <button type="button" class="btn btn-success mb-1">
+                          Edit
+                        </button>
+                        <button type="button" class="btn btn-danger mb-1">
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-3 px-1">5</td>
+                      <td class="py-3 px-1">Lorem, ipsum dolor.</td>
+                      <td class="py-3 px-1">Lorem, ipsum dolor.</td>
+                      <td class="py-3 px-1">Lorem, ipsum dolor.</td>
+                      <td class="py-3 px-1">01/02/2023</td>
+                      <td class="py-3 px-1">
+                        <button type="button" class="btn btn-success mb-1">
+                          Edit
+                        </button>
+                        <button type="button" class="btn btn-danger mb-1">
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="py-3 px-1">6</td>
+                      <td class="py-3 px-1">Lorem, ipsum dolor.</td>
+                      <td class="py-3 px-1">Lorem, ipsum dolor.</td>
+                      <td class="py-3 px-1">Lorem, ipsum dolor.</td>
+                      <td class="py-3 px-1">01/02/2023</td>
+                      <td class="py-3 px-1">
+                        <button type="button" class="btn btn-success mb-1">
+                          Edit
+                        </button>
+                        <button type="button" class="btn btn-danger mb-1">
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--Logout Modal -->
+    <div
+      class="modal fade"
+      id="logoutmodal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Are you sure you want to log out?
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-footer border-0">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              No
+            </button>
+            <button type="button" class="btn btn-primary">
+              <a
+                href="https://binaryshastra.com"
+                class="text-white text-decoration-none"
+                >Yes</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="weather.js"></script>
+
+    <script src="script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
